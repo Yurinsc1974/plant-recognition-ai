@@ -18,7 +18,7 @@ app.add_middleware(
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-model_path         = os.path.join(BASE_DIR, 'model', 'plant_model.h5')
+model_path         = os.path.join(BASE_DIR, 'model', 'plant_model.keras')
 class_indices_path = os.path.join(BASE_DIR, 'model', 'class_indices.json')
 plants_data_path   = os.path.join(BASE_DIR, 'api', 'plants_data.json')
 
@@ -26,4 +26,35 @@ model = tf.keras.models.load_model(model_path)
 
 with open(class_indices_path) as f:
     class_indices = json.load(f)
-    idx
+    idx_to_class = {v: k for k, v in class_indices.items()}
+
+with open(plants_data_path) as f:
+    plants_data = json.load(f)
+
+def preprocess_image(image_bytes):
+    img = Image.open(io.BytesIO(image_bytes)).convert('RGB')
+    img = img.resize((224, 224))
+    img_array = np.array(img) / 255.0
+    return np.expand_dims(img_array, axis=0)
+
+@app.post("/identify")
+async def identify_plant(file: UploadFile = File(...)):
+    image_bytes = await file.read()
+    img = preprocess_image(image_bytes)
+
+    predictions = model.predict(img)
+    confidence = float(np.max(predictions))
+    class_idx = int(np.argmax(predictions))
+    plant_name = idx_to_class[class_idx]
+
+    plant_info = plants_data.get(plant_name, {})
+
+    return {
+        "planta": plant_name,
+        "confianca": f"{confidence * 100:.1f}%",
+        "dados": plant_info
+    }
+
+@app.get("/health")
+def health():
+    return {"status": "online"}
