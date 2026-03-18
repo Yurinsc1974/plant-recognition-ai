@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identificador de Plantas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Identificador de Plantas</h1>
+      <p>Tire uma foto ou envie uma imagem para descobrir qual planta é.</p>
+    </header>
+
+    <main>
+      <section class="upload-section">
+        <label for="imageInput" class="upload-label">
+          <span>Escolher foto ou usar câmera</span>
+        </label>
+        <!-- input configurado para abrir câmera no celular -->
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+          capture="environment"
+        />
+
+        <button id="identifyButton" disabled>Identificar planta</button>
+
+        <div class="preview-container" id="previewContainer" style="display:none;">
+          <p>Pré-visualização:</p>
+          <img id="previewImage" alt="Pré-visualização" />
+        </div>
+
+        <div class="status" id="status"></div>
+      </section>
+
+      <section class="result-section" id="resultSection" style="display:none;">
+        <h2>Resultado</h2>
+        <p><strong>Planta identificada:</strong> <span id="plantName"></span></p>
+        <p><strong>Confiança:</strong> <span id="confidence"></span></p>
+
+        <div id="plantDetails"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Protótipo — Reconhecimento de 5 plantas</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
