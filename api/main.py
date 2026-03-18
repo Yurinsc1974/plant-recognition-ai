@@ -18,11 +18,30 @@ app.add_middleware(
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-model_path         = os.path.join(BASE_DIR, 'model', 'plant_model.keras')
+weights_path       = os.path.join(BASE_DIR, 'model', 'plant_weights.h5')
 class_indices_path = os.path.join(BASE_DIR, 'model', 'class_indices.json')
 plants_data_path   = os.path.join(BASE_DIR, 'api', 'plants_data.json')
 
-model = tf.keras.models.load_model(model_path)
+# Reconstrói a mesma arquitetura usada no treino
+def build_model(num_classes=5):
+    base_model = tf.keras.applications.MobileNetV2(
+        input_shape=(224, 224, 3),
+        include_top=False,
+        weights=None
+    )
+    model = tf.keras.Sequential([
+        base_model,
+        tf.keras.layers.GlobalAveragePooling2D(),
+        tf.keras.layers.Dense(256, activation='relu'),
+        tf.keras.layers.Dropout(0.5),
+        tf.keras.layers.Dense(num_classes, activation='softmax')
+    ])
+    return model
+
+model = build_model(num_classes=5)
+model.build((None, 224, 224, 3))
+model.load_weights(weights_path)
+print("Modelo carregado com sucesso!")
 
 with open(class_indices_path) as f:
     class_indices = json.load(f)
