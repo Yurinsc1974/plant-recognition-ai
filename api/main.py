@@ -18,11 +18,10 @@ app.add_middleware(
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-weights_path       = os.path.join(BASE_DIR, 'model', 'plant_weights.h5')
+weights_path       = os.path.join(BASE_DIR, 'model', 'plant_weights.weights.h5')
 class_indices_path = os.path.join(BASE_DIR, 'model', 'class_indices.json')
 plants_data_path   = os.path.join(BASE_DIR, 'api', 'plants_data.json')
 
-# Reconstrói a mesma arquitetura usada no treino
 def build_model(num_classes=5):
     base_model = tf.keras.applications.MobileNetV2(
         input_shape=(224, 224, 3),
