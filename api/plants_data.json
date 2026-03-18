@@ -1,0 +1,82 @@
+ {
+     "fagopyrum_esculentum": {
+       "nome_comum": "Trigo Sarraceno",
+       "nome_cientifico": "Fagopyrum esculentum",
+       "familia": "Polygonaceae",
+       "tipo": "Planta de cobertura / cultura",
+       "cuidados": {
+         "agua": "Moderada, sensível ao encharcamento",
+         "luz": "Sol pleno",
+         "solo": "Prefere solos leves e bem drenados, tolera solos pobres",
+         "temperatura": "Ideal entre 18°C e 25°C, sensível à geada"
+       },
+       "uso_agricola": "Cobertura de solo, adubação verde, alimentação humana e animal",
+       "ciclo": "60 a 90 dias",
+       "toxicidade": "Não tóxica. Pode causar fotossensibilidade em animais albinos",
+       "curiosidades": "Apesar do nome, não é um cereal verdadeiro. Rica em rutina e aminoácidos essenciais."
+     },
+     "avena_strigosa": {
+       "nome_comum": "Aveia Preta",
+       "nome_cientifico": "Avena strigosa",
+       "familia": "Poaceae",
+       "tipo": "Planta de cobertura / pastagem",
+       "cuidados": {
+         "agua": "Regular, boa tolerância à seca moderada",
+         "luz": "Sol pleno",
+         "solo": "Adapta-se bem a solos argilosos e arenosos",
+         "temperatura": "Clima frio a temperado, ideal entre 10°C e 20°C"
+       },
+       "uso_agricola": "Cobertura de solo no inverno, palhada para plantio direto, pastagem",
+       "ciclo": "120 a 150 dias",
+       "toxicidade": "Não tóxica",
+       "curiosidades": "Uma das principais plantas para formação de palhada no sistema de plantio direto no Brasil."
+     },
+     "raphanus_sativus": {
+       "nome_comum": "Nabo Forrageiro",
+       "nome_cientifico": "Raphanus sativus",
+       "familia": "Brassicaceae",
+       "tipo": "Planta de cobertura / horticultura",
+       "cuidados": {
+         "agua": "Regular, solo úmido mas não encharcado",
+         "luz": "Sol pleno a meia sombra",
+         "solo": "Solos profundos e bem drenados, pH entre 5,5 e 6,8",
+         "temperatura": "Clima temperado, ideal entre 15°C e 20°C"
+       },
+       "uso_agricola": "Adubação verde, descompactação de solo, rotação de culturas",
+       "ciclo": "60 a 90 dias",
+       "toxicidade": "Não tóxica. Folhas e raízes comestíveis",
+       "curiosidades": "A raiz pivotante pode atingir mais de 1 metro de profundidade, quebrando camadas compactadas do solo."
+     },
+     "pennisetum_glaucum": {
+       "nome_comum": "Milheto",
+       "nome_cientifico": "Pennisetum glaucum",
+       "familia": "Poaceae",
+       "tipo": "Planta de cobertura / forrageira",
+       "cuidados": {
+         "agua": "Boa tolerância à seca, mas responde bem à irrigação",
+         "luz": "Sol pleno",
+         "solo": "Adapta-se a solos pobres e arenosos",
+         "temperatura": "Clima quente, ideal acima de 25°C"
+       },
+       "uso_agricola": "Cobertura de solo no verão, pastagem, silagem, palhada",
+       "ciclo": "90 a 120 dias",
+       "toxicidade": "Não tóxica em condições normais",
+       "curiosidades": "Excelente opção de cobertura para o cerrado brasileiro. Produz grande volume de palhada."
+     },
+     "brachiaria_decumbens": {
+       "nome_comum": "Braquiária",
+       "nome_cientifico": "Urochloa decumbens",
+       "familia": "Poaceae",
+       "tipo": "Forrageira / pastagem",
+       "cuidados": {
+         "agua": "Tolerante à seca após estabelecida",
+         "luz": "Sol pleno",
+         "solo": "Solos de baixa fertilidade, especialmente do cerrado",
+         "temperatura": "Clima tropical, sensível a geadas"
+       },
+       "uso_agricola": "Pastagem para bovinos, cobertura de solo, integração lavoura-pecuária",
+       "ciclo": "Perene",
+       "toxicidade": "Pode causar fotossensibilização hepatógena em ovinos e bovinos jovens",
+       "curiosidades": "É a forrageira mais plantada do Brasil, com estimativa de mais de 70 milhões de hectares cultivados."
+     }
+   }
